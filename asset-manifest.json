@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/le-loft-d-agnes/static/css/main.073c9b0a.css",
-    "main.js": "/le-loft-d-agnes/static/js/main.db92cba8.js",
+    "main.css": "/le-loft-d-agnes/static/css/main.af6e0eb1.css",
+    "main.js": "/le-loft-d-agnes/static/js/main.7421bed8.js",
     "static/js/787.b812ef50.chunk.js": "/le-loft-d-agnes/static/js/787.b812ef50.chunk.js",
+    "static/media/le-loft-d-agnes-logo.svg": "/le-loft-d-agnes/static/media/le-loft-d-agnes-logo.ef861f46bda7e2462c94cb2cceb09cef.svg",
     "static/media/logo.svg": "/le-loft-d-agnes/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/le-loft-d-agnes/index.html",
-    "main.073c9b0a.css.map": "/le-loft-d-agnes/static/css/main.073c9b0a.css.map",
-    "main.db92cba8.js.map": "/le-loft-d-agnes/static/js/main.db92cba8.js.map",
+    "main.af6e0eb1.css.map": "/le-loft-d-agnes/static/css/main.af6e0eb1.css.map",
+    "main.7421bed8.js.map": "/le-loft-d-agnes/static/js/main.7421bed8.js.map",
     "787.b812ef50.chunk.js.map": "/le-loft-d-agnes/static/js/787.b812ef50.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.db92cba8.js"
+    "static/css/main.af6e0eb1.css",
+    "static/js/main.7421bed8.js"
   ]
 }
