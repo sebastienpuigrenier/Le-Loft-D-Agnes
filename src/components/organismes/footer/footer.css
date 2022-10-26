@@ -1,0 +1,27 @@
+footer {
+  min-height: 7rem;
+  padding: 0 1.25rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-black);
+  color: var(--color-gold);
+
+  font-size: 1.4rem;
+}
+
+footer li {
+  list-style-type: none;
+  font-size: 3.75rem;
+}
+
+footer p {
+  padding: 0 1rem;
+}
+
+#svglogo {
+  max-width: 105px;
+  width: 105px;
+}
