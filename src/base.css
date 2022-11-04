@@ -21,6 +21,7 @@ html {
 body {
 	font-size: 1rem; /* equiv 14px */
 	line-height: 1; /* adapt to your design */
+	width: 100vw;
 }
 
 /* font-sizing for content */
