@@ -5,7 +5,7 @@ import { mobileHeaderHeight } from "../../../utils/divDimensions";
 import "./header.css";
 
 export const Header = () => {
-  const styleHeight = {
+  const headerHeight = {
     "--height" : `${mobileHeaderHeight}vh`
   };
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -19,7 +19,7 @@ export const Header = () => {
     <>
       <header
         className={isMenuActive ? "active" : ""}
-        style={styleHeight}
+        style={headerHeight}
       >
         <div className="header-container">
           <h1>Le Loft d'Agnès</h1>

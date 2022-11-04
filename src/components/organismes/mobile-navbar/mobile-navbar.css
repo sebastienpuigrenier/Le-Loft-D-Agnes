@@ -6,6 +6,8 @@
 
   font-family: var(--font-second);
   color: var(--color-gold);
+
+  cursor: pointer;
   
   transition: 0.5s;
 }
