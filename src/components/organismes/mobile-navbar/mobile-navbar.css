@@ -1,0 +1,29 @@
+.mobileNavbarLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-family: var(--font-second);
+  color: var(--color-gold);
+  
+  transition: 0.5s;
+}
+
+.mobileNavbarLine:nth-child(odd) {
+  background-color: var(--color-white);
+  position: absolute;
+  top: 15vh;
+  left: +100vw;
+}
+
+.mobileNavbarLine:nth-child(even) {
+  background-color: var(--color-black);
+  position: absolute;
+  top: 30vh;
+  left: -100vw;
+}
+
+.mobileNavbarLine.active {
+  left: 0;
+}

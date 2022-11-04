@@ -1,0 +1,53 @@
+
+#burger-menu {
+  width: 2.2rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  position: relative;
+  top: 50%;
+  content: '';
+  height: 0.25rem;
+  width: 2.2rem;
+  background-color: var(--color-gold);
+  transition: 0.5s;
+}
+
+.hamburger::after,
+.hamburger::before{
+  content: '';
+  height: 0.25rem;
+  width: 1.4rem;
+  background-color: var(--color-gold);
+  transition: 0.5s;
+
+  position: absolute;
+  left: 0.4rem
+
+}
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
+
+#burger-menu.active .hamburger {
+  background-color:rgba(0,0,0,0);
+}
+
+#burger-menu.active .hamburger::before {
+  top: 0;
+  transform:rotate(45deg);
+}
+
+#burger-menu.active .hamburger:after {
+  top: 0;
+  transform:rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+

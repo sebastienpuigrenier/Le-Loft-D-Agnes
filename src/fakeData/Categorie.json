@@ -1,13 +1,16 @@
 [
   {
+    "key": 0,
     "nom" : "Plateau à apéro",
-    "descriptif" : "Vous pouvez découvrir différents formats de planches à apéro carré, rectangle avec différentes dimensions. N'hésitez pas particuliers ou professionnels à me contacter pour toutes informations, budgétisation ou même pour un projet sûr mesure ! Différents choix de couleurs de anses. Concernant la personnalisation elle est réalisée à la main, un vrai travail artisanal. J'utilise un vernis eco label spécial contact alimentaire qui permet de nettoyer la planche aussi facilement avec une éponge et de l'eau. Pas de lave vaisselle par contre ! ",
+    "descriptif" : "Vous pouvez découvrir différents formats de planches à apéro carré, rectangle avec différentes dimensions. N'hésitez pas particuliers ou professionnels à me contacter pour toutes informations, budgétisation ou même pour un projet sûr mesure ! Différents choix de couleurs de anses. Concernant la personnalisation elle est réalisée à la main, un vrai travail artisanal. J'utilise un vernis eco label spécial contact alimentaire qui permet de nettoyer la planche aussi facilement avec une éponge et de l'eau. Pas de lave vaisselle par contre ! "
 },
 {
+  "key": 1,
   "nom" : "Couronne Pompons",
   "descriptif" : ""
 },
 {
+  "key": 2,
   "nom" : "Objets déco / Miroirs",
   "descriptif" : ""
 }

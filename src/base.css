@@ -1,11 +1,17 @@
 /* ----------------------------- */
 /* ==reset */
 /* ----------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Hind+Madurai:wght@400;700&family=Josefin+Sans:wght@400;600;700&display=swap');
+
 :root {
   --color-black: #221e22;
   --color-gold: #c59849;
   --color-white: #fcfaf9;
   --color-green: #60787d;
+	--font-title: 'Glegoo', serif;
+	--font-second: 'Josefin Sans', sans-serif;
+	--font-texte: 'Hind Madurai', sans-serif;
+
 }
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
@@ -36,15 +42,17 @@ hgroup {
 }
 h1, .h1-like {
 	font-size: 1.8571em; /* equiv 26px */
-	font-weight: normal;
+	font-weight: bold;
 	line-height: 1.6154em;
 	margin: .8077em 0 0 0;
+	font-family: var(--font-title);
 }
 h2, .h2-like {
 	font-size: 1.7143em; /* equiv 24px */
 	font-weight: normal;
 	line-height: 1.75em;
 	margin: .875em 0 0 0;
+	font-family: var(--font-second);
 }
 h3, .h3-like {
 	font-size: 1.5714em; /* equiv 22px */
@@ -69,6 +77,9 @@ h6, .h6-like {
 	font-weight: normal;
 	line-height: 1.3125em;
 	margin:  1.3125em 0 0 0;
+}
+p {
+	font-family: var(--font-texte);
 }
 
 /* alternate font-sizing */

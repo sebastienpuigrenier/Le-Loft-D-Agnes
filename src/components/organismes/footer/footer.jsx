@@ -1,11 +1,17 @@
 import { AiFillMail, AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import "./footer.css";
 import svgLogo from "../../../img/le-loft-d-agnes-logo.svg";
+import { mobileFooterHeight } from "../../../utils/divDimensions";
 
 export const Footer =() => {
+  const footerHeight = {
+    "--height" : `${mobileFooterHeight}vh`
+  };
 
   return(
-    <footer>
+    <footer
+      style={footerHeight}
+    >
       <div>
         <img id="svglogo" src={svgLogo} alt="Le loft d'Agnès"/>
       </div>

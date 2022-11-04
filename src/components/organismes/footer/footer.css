@@ -1,5 +1,5 @@
 footer {
-  min-height: 7rem;
+  height: var(--height);
   padding: 0 1.25rem;
   
   display: flex;
