@@ -9,7 +9,7 @@ export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
   const lineHeight = mobileNavBarLineHeight(Categories.length);
 
   return (
-    <>
+    <div>
       {Categories.map((categorie, index) => {
         const top = headerHeight + (index * lineHeight);
         return(
@@ -25,7 +25,7 @@ export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
       })
       }
 
-    </>
+    </div>
 
   );
 };

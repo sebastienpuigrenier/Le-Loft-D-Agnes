@@ -10,13 +10,14 @@
   cursor: pointer;
   
   transition: 0.5s;
+
 }
 
 .mobileNavbarLine:nth-child(odd) {
   background-color: var(--color-white);
   position: absolute;
   top: 15vh;
-  left: +100vw;
+  left: -100vw;
 }
 
 .mobileNavbarLine:nth-child(even) {
