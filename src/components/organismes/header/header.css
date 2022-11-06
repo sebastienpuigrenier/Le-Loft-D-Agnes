@@ -21,7 +21,7 @@ header::before {
   top: 0;
   left: -100vw;
 
-  background-color: var(--color-black);
+  background-color: var(--color-black-transparent);
   transition: 0.5s;
 }
 

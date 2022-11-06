@@ -1,0 +1,21 @@
+.index-categorie-line {
+  margin-bottom: 3rem;
+}
+
+.index-categorie-line h2{
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.index-categorie-line img {
+  width: 100%;
+}
+
+.index-categorie-line-text-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.index-categorie-line-text-container p {
+  text-align: center;
+}

@@ -12,9 +12,9 @@ export const MobileNavbarLine = ({titre, height, isMenuActive, top, handleClick}
     <div
       className={`mobileNavbarLine ${isMenuActive ? "active" : ""}`}
       style={{
-        height: `${height}vh`,
-        fontSize: `${height}px`,
-        top: `${top}vh`
+        height: `calc(${height} * var(--vh))`,
+        fontSize: `calc(2 * ${height}px)`,
+        top: `calc(${top} * var(--vh))`
       }}
       onClick={currentHandleClick}
     >

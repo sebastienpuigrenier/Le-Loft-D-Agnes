@@ -11,10 +11,23 @@ import { Footer } from "./components/organismes/footer/footer";
 import { Categorie } from "./components/pages/Categorie";
 
 import Index from "./components/pages/Index";
+import { useEffect } from "react";
 
 
 
 function App() {
+
+  let realvh = window.innerHeight * 0.01;
+  useEffect(()=> {
+    realvh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${realvh}px`);
+
+  }, []);
+
+  window.addEventListener('resize', () => {
+    let realvh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${realvh}px`);
+  });
   
   return (
     <div>

@@ -5,7 +5,7 @@ import { mobileFooterHeight } from "../../../utils/divDimensions";
 
 export const Footer =() => {
   const footerHeight = {
-    "--height" : `${mobileFooterHeight}vh`
+    "--height" : `calc(${mobileFooterHeight} * var(--vh))`
   };
 
   return(

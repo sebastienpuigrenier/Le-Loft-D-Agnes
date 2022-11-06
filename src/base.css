@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Hind+Madurai:wght@400;700&family=Josefin+Sans:wght@400;600;700&display=swap');
 
 :root {
-  --color-black: #221e22;
+  --color-black: rgba(34, 30, 34, 1);
+  --color-black-transparent: rgba(34, 30, 34, 0.8);
   --color-gold: #c59849;
   --color-white: #fcfaf9;
   --color-green: #60787d;
@@ -21,7 +22,6 @@ html {
 body {
 	font-size: 1rem; /* equiv 14px */
 	line-height: 1; /* adapt to your design */
-	width: 100vw;
 }
 
 /* font-sizing for content */
@@ -50,10 +50,10 @@ h1, .h1-like {
 }
 h2, .h2-like {
 	font-size: 1.7143em; /* equiv 24px */
-	font-weight: normal;
+	font-weight: bold;
 	line-height: 1.75em;
 	margin: .875em 0 0 0;
-	font-family: var(--font-second);
+	font-family: var(--font-title);
 }
 h3, .h3-like {
 	font-size: 1.5714em; /* equiv 22px */
@@ -80,6 +80,7 @@ h6, .h6-like {
 	margin:  1.3125em 0 0 0;
 }
 p {
+	font-size: 1em; /* equiv 14px */
 	font-family: var(--font-texte);
 }
 

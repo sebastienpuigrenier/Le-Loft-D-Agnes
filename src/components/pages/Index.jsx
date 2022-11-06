@@ -1,24 +1,21 @@
-import logo from '../../logo.svg';
+//import logo from '../../logo.svg';
+import Categories from "../../fakeData/Categorie.json";
+import { IndexCategorieLine } from "../molecules/index-categorie-line/index-categorie-line";
+// import { Categorie } from './Categorie';
 
 function Index() {
   
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </div>
-    </div>
+    <>
+      {Categories.map((categorie, index) => {
+        return (
+          <IndexCategorieLine
+            key={index}
+            categorie={categorie}
+          />
+        );
+      })}
+    </>
   );
 }
 

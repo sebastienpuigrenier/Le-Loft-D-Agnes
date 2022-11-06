@@ -24,6 +24,15 @@ export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
         );
       })
       }
+      
+      <MobileNavbarLine
+        key="contact"
+        titre = "Contact"
+        height={lineHeight}
+        isMenuActive={isMenuActive}
+        top = {headerHeight + (Categories.length * lineHeight)}
+        handleClick={handleClick}
+      />
 
     </div>
 

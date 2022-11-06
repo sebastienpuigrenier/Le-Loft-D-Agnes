@@ -3,16 +3,19 @@ import { Hamburger } from "../../atomes/hamburger/hamburger";
 import { MobileNavbar } from "../mobile-navbar/mobile-navbar";
 import { mobileHeaderHeight } from "../../../utils/divDimensions";
 import "./header.css";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const headerHeight = {
-    "--height" : `${mobileHeaderHeight}vh`
+    "--height" : `calc(${mobileHeaderHeight} * var(--vh))`
   };
   const [isMenuActive, setIsMenuActive] = useState(false);
 
   const handleClick = () => {
     setIsMenuActive(!isMenuActive);
   };
+
+  let navigate = useNavigate();
 
 
   return(
@@ -22,7 +25,7 @@ export const Header = () => {
         style={headerHeight}
       >
         <div className="header-container">
-          <h1>Le Loft d'Agnès</h1>
+          <h1 onClick={() => navigate("")}>Le Loft d'Agnès</h1>
           <Hamburger
             handleClick={handleClick}
             isMenuActive={isMenuActive} />
