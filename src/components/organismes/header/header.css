@@ -1,5 +1,6 @@
 header {
   height: var(--height);
+  min-height: 18vh;
   padding: 0 1.25rem;
 
   background-image: url("../../../img/header-mobile.png");
