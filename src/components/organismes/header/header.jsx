@@ -7,26 +7,46 @@ import { mobileNavBarLineHeight } from "../../../utils/divDimensions";
 import Categories from "../../../fakeData/Categorie.json";
 import { useContext } from "react";
 import ExportContext from "../../../contexts/context";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  let navigate = useNavigate();
   const lineHeight = mobileNavBarLineHeight(Categories.length);
   const headerHeight = {
-    "--height" : `calc(${mobileHeaderHeight} * var(--vh))`,
+    "--height" : `${mobileHeaderHeight}vh`,
     "--title-height" : `calc(2 * ${lineHeight}px)`
   };
   const {isMenuActive, setIsMenuActive} = useContext(ExportContext.Context);
+  const [isMini, setIsMini] = useState( false);
 
   const handleClick = () => {
+    window.scrollTo(0, 0);
     setIsMenuActive(!isMenuActive);
   };
 
-  let navigate = useNavigate();
+  const handleScroll = () => {
+    console.warn(window.pageYOffset);
+    if(window.pageYOffset > 80) {
+      setIsMini(true);
+    } else {
+      setIsMini(false);
+    }
+  };
+  
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  console.warn(isMini);
   return(
     <>
       <header
-        className={isMenuActive ? "active" : ""}
+        className={(isMini ? "mini " : " ") + (isMenuActive ? "active" : "")}
         style={headerHeight}
       >
         <div className="header-container">

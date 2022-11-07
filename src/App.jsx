@@ -1,30 +1,26 @@
-import React from "react";
-
-import Categories from "./fakeData/Categorie.json";
-
-import './App.css';
-import './base.css';
-
+import React, { useContext, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+
+import ExportContext from "./contexts/context";
+
+import { Index } from "./components/pages/Index";
 import { Header } from "./components/organismes/header/header";
 import { Footer } from "./components/organismes/footer/footer";
 import { Categorie } from "./components/pages/Categorie";
 
-import Index from "./components/pages/Index";
-import { useEffect } from "react";
-import { useContext } from "react";
-import ExportContext from "./contexts/context";
-import { useState } from "react";
 
+import './App.css';
+import './base.css';
+
+import Categories from "./fakeData/Categorie.json";
 
 
 function App() {
-
   const {isMenuActive} = useContext(ExportContext.Context);
   const [showContent, setShowContent] = useState(false);
+  const [realvh, setRealVh] = useState(window.innerHeight * 0.01);
 
   useEffect(() => {
-
     if(!isMenuActive){
       setShowContent(!isMenuActive);
     }
@@ -34,16 +30,13 @@ function App() {
     }, 500);
 
     return () => {
-      // clears timeout before running the new effect
       clearTimeout(delayHideContent);
     };
-
     
   },[isMenuActive] );
 
-  let realvh = window.innerHeight * 0.01;
   useEffect(()=> {
-    realvh = window.innerHeight * 0.01;
+    setRealVh(window.innerHeight * 0.01);
     document.documentElement.style.setProperty('--vh', `${realvh}px`);
 
   }, []);

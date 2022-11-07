@@ -9,8 +9,8 @@
   position: relative;
   top: 50%;
   content: '';
-  height: 0.25rem;
-  width: 2.2rem;
+  height: 0.2rem;
+  width: 2rem;
   background-color: var(--color-gold);
   transition: 0.5s;
 }
@@ -18,21 +18,21 @@
 .hamburger::after,
 .hamburger::before{
   content: '';
-  height: 0.25rem;
-  width: 1.4rem;
+  height: 0.2rem;
+  width: 1.2rem;
   background-color: var(--color-gold);
   transition: 0.5s;
 
   position: absolute;
-  left: 0.4rem
+  left: 0.35rem
 
 }
 .hamburger::before {
-  top: -6px;
+  top: -8px;
 }
 
 .hamburger::after {
-  top: 6px;
+  top: 8px;
 }
 
 

@@ -15,18 +15,12 @@
 
 }
 
-/* base font-size corresponds to 10px and is adapted to rem unit */
-html {
-	font-size: 62.5%;
-}
 body {
-	font-size: 1rem; /* equiv 14px */
 	line-height: 1; /* adapt to your design */
 }
 
 /* font-sizing for content */
 /* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
-p,
 blockquote,
 pre,
 td,
@@ -37,73 +31,75 @@ caption,
 details, 
 figure, 
 hgroup {
-	font-size: 1em; /* equiv 14px */
+	font-size: 1rem;
 	line-height: 1.5;
-	margin: 1.5em 0 0;
+	margin: 1.5rem 0 0;
 }
 h1, .h1-like {
-	font-size: 1.8571em; /* equiv 26px */
+	font-size: 1.8571rem;
 	font-weight: bold;
-	line-height: 1.6154em;
-	margin: .8077em 0 0 0;
+	line-height: 1.6154rem;
+	margin: .8077rem 0 0 0;
 	font-family: var(--font-title);
 }
 h2, .h2-like {
-	font-size: 1.7143em; /* equiv 24px */
+	font-size: 1.7143rem;
 	font-weight: bold;
-	line-height: 1.75em;
-	margin: .875em 0 0 0;
+	line-height: 1.75rem;
+	margin: .875rem 0 0 0;
 	font-family: var(--font-title);
 }
 h3, .h3-like {
-	font-size: 1.5714em; /* equiv 22px */
+	font-size: 1.5714rem;
 	font-weight: normal;
-	line-height: 1.909em;
-	margin: .9545em 0 0 0;
+	line-height: 1.909rem;
+	margin: .9545rem 0 0 0;
 }
 h4, .h4-like {
-	font-size: 1.4286em; /* equiv 20px */
+	font-size: 1.4286rem;
 	font-weight: normal;
-	line-height: 1.05em;
-	margin:  1.05em 0 0 0;
+	line-height: 1.05rem;
+	margin:  1.05rem 0 0 0;
 }
 h5, .h5-like {
-	font-size: 1.2857em; /* equiv 18px */
+	font-size: 1.2857rem;
 	font-weight: normal;
-	line-height: 1.1667em;
-	margin:  1.1667em 0 0 0;
+	line-height: 1.1667rem;
+	margin:  1.1667rem 0 0 0;
 }
 h6, .h6-like {
-	font-size: 1.1429em; /* equiv 16px */
+	font-size: 1.1429rem;
 	font-weight: normal;
-	line-height: 1.3125em;
-	margin:  1.3125em 0 0 0;
+	line-height: 1.3125rem;
+	margin:  1.3125rem 0 0 0;
 }
 p {
-	font-size: 1em; /* equiv 14px */
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 1.5rem 0 0;
 	font-family: var(--font-texte);
 }
 
 /* alternate font-sizing */
 .smaller {
-	font-size: .7143em; /* equiv 10px */
-	line-height: 2.1em;
+	font-size: .7143rem;
+	line-height: 2.1rem;
 }
 .small {
-	font-size: .8571em; /* equiv 12px */
-	line-height: 1.75em;
+	font-size: .8571rem;
+	line-height: 1.75rem;
 }
 .big {
-	font-size: 1.1429em; /* equiv 16px */
-	line-height: 1.3125em;
+	font-size: 1.1429rem;
+	line-height: 1.3125rem;
 }
 .bigger {
-	font-size: 1.2857em; /* equiv 18px */
-	line-height: 1.1667em;
+	font-size: 1.2857rem;
+	line-height: 1.1667rem;
 }
 .biggest {
-	font-size: 1.4286em; /* equiv 20px */
-	line-height: 1.05em;
+	font-size: 1.4286rem;
+	line-height: 1.05rem;
 }
 
 /* soft reset */
@@ -122,8 +118,8 @@ samp {
 	white-space: pre-wrap;
 	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
 }
-code { line-height: 1em; }
-table { margin-bottom: 1.5em; }
+code { line-height: 1rem; }
+table { margin-bottom: 1.5rem; }
 
 /* link balise a */
 a {
@@ -151,7 +147,7 @@ a:active {
 
 }
 
-/* avoid top margins on first content element */
+/* avoid top margins on first content elrement */
 p:first-child,
 blockquote:first-child,
 pre:first-child,
