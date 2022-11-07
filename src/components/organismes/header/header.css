@@ -18,6 +18,7 @@ header {
 
 header.mini {
   height: calc(var(--height) / 3);
+  min-height: 8vh;
 }
 
 header.active {

@@ -1,6 +1,6 @@
 footer {
   height: var(--height);
-  min-height: 25vh;
+  min-height: 30vh;
   padding: 0 1.25rem;
   
   display: flex;
