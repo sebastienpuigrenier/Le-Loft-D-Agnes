@@ -1,6 +1,10 @@
 import "./hamburger.css";
+import { useContext } from "react";
+import ExportContext from "../../../contexts/context";
 
-export const Hamburger = ({handleClick, isMenuActive}) => {
+export const Hamburger = ({handleClick}) => {
+  
+  const {isMenuActive} = useContext(ExportContext.Context);
 
   return(
     <div id="burger-menu"

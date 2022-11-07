@@ -4,7 +4,7 @@ import { MobileNavbarLine } from "../../molecules/mobile-navbar-line/mobile-navb
 
 import "./mobile-navbar.css";
 
-export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
+export const MobileNavbar = ({headerHeight, handleClick}) => {
 
   const lineHeight = mobileNavBarLineHeight(Categories.length);
 
@@ -17,7 +17,6 @@ export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
             key={index}
             titre = {categorie.nom}
             height={lineHeight}
-            isMenuActive={isMenuActive}
             top = {top}
             handleClick={handleClick}
           />
@@ -29,7 +28,6 @@ export const MobileNavbar = ({isMenuActive, headerHeight, handleClick}) => {
         key="contact"
         titre = "Contact"
         height={lineHeight}
-        isMenuActive={isMenuActive}
         top = {headerHeight + (Categories.length * lineHeight)}
         handleClick={handleClick}
       />
