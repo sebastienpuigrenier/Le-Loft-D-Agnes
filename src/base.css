@@ -40,14 +40,14 @@ h1, .h1-like {
 	font-weight: bold;
 	line-height: 1.6154rem;
 	margin: .8077rem 0 0 0;
-	font-family: var(--font-title);
+	font-family: var(--font-second);
 }
 h2, .h2-like {
 	font-size: 1.7143rem;
 	font-weight: bold;
 	line-height: 1.75rem;
 	margin: .875rem 0 0 0;
-	font-family: var(--font-title);
+	font-family: var(--font-second);
 }
 h3, .h3-like {
 	font-size: 1.5714rem;

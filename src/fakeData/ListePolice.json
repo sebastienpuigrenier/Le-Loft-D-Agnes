@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "nom" : "police 1",
+    "photo": "none"
+},
+{
+  "id": 1,
+  "nom" : "police 2",
+  "photo": "none"
+},
+{
+  "id": 2,
+  "nom" : "police 3",
+  "photo": "none"
+},
+{
+  "id": 3,
+  "nom" : "police 4",
+  "photo": "none"
+},
+{
+  "id": 4,
+  "nom" : "police 5",
+  "photo": "none"
+}
+]

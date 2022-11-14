@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "nom" : "noir",
+    "photo": "none"
+},
+{
+  "id": 1,
+  "nom" : "marron foncé",
+  "photo": "none"
+},
+{
+  "id": 2,
+  "nom" : "cognac",
+  "photo": "none"
+},
+{
+  "id": 3,
+  "nom" : "camel",
+  "photo": "none"
+},
+{
+  "id": 4,
+  "nom" : "rouge",
+  "photo": "none"
+}
+]

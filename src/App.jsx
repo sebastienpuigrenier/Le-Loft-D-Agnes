@@ -6,13 +6,15 @@ import ExportContext from "./contexts/context";
 import { Index } from "./components/pages/Index";
 import { Header } from "./components/organismes/header/header";
 import { Footer } from "./components/organismes/footer/footer";
-import { Categorie } from "./components/pages/Categorie";
+import { Categorie } from "./components/pages/categorie/categorie";
+import { Produit } from "./components/pages/produit/produit";
 
 
 import './App.css';
 import './base.css';
 
 import Categories from "./fakeData/Categorie.json";
+import ListeProduit from "./fakeData/ListeProduit.json";
 
 
 function App() {
@@ -51,10 +53,6 @@ function App() {
       <Header />
       <div style={showContent ? {display: 'block'} : {display: 'none'}}>
         <Routes>
-          <Route
-            path="/*"
-            element={<Index />}
-          />
           {Categories.map((categorie, index) => 
             <Route
               key={index}
@@ -62,6 +60,17 @@ function App() {
               element={<Categorie titre={categorie.nom} />}
             />
           )}
+          {ListeProduit.map((produit, index) => 
+            <Route
+              key={index}
+              path={`/${produit.nom}`}
+              element={<Produit titre={produit.nom} />}
+            />
+          )}
+          <Route
+            path="/*"
+            element={<Index />}
+          />
         </Routes>
       </div>
       <Footer />
