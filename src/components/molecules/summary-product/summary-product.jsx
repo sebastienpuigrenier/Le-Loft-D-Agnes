@@ -12,7 +12,7 @@ export const SummaryProduct = ({produit}) => {
       onClick={() => navigate(`/${produit.nom}`)}
     >
       <img src={produit.photo}/>
-      <h4>{produit.nom}</h4>
+      <h5>{produit.nom}</h5>
     </div>
   );
 };

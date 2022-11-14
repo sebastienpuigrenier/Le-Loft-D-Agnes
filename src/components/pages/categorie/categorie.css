@@ -1,9 +1,9 @@
 .categorie-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 

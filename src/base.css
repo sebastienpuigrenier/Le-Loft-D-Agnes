@@ -60,18 +60,21 @@ h4, .h4-like {
 	font-weight: normal;
 	line-height: 1.05rem;
 	margin:  1.05rem 0 0 0;
+	font-family: var(--font-texte);
 }
 h5, .h5-like {
 	font-size: 1.2857rem;
 	font-weight: normal;
 	line-height: 1.1667rem;
 	margin:  1.1667rem 0 0 0;
+	font-family: var(--font-texte);
 }
 h6, .h6-like {
 	font-size: 1.1429rem;
 	font-weight: normal;
 	line-height: 1.3125rem;
 	margin:  1.3125rem 0 0 0;
+	font-family: var(--font-texte);
 }
 p {
 	font-size: 1rem;
