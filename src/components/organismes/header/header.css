@@ -61,6 +61,10 @@ header h1.active {
   font-size: var(--title-height);
 }
 
+header .clickable {
+  cursor: pointer;
+}
+
 .header-container {
   height: 100%;
   width: 90%;

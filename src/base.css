@@ -1,7 +1,7 @@
 /* ----------------------------- */
 /* ==reset */
 /* ----------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Hind+Madurai:wght@400;700&family=Josefin+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Poiret+One&display=swap');
 
 :root {
   --color-black: rgba(34, 30, 34, 1);
@@ -9,10 +9,9 @@
   --color-gold: #c59849;
   --color-white: #fcfaf9;
   --color-green: #60787d;
-	--font-title: 'Glegoo', serif;
-	--font-second: 'Josefin Sans', sans-serif;
-	--font-texte: 'Hind Madurai', sans-serif;
-
+	--font-title: 'Poiret One', cursive;
+	--font-second: 'Poiret One', cursive;
+	--font-texte: 'Abel', sans-serif;
 }
 
 body {
@@ -214,4 +213,9 @@ body > script {display: none !important;}
 }
 .skip-links a:focus {
 	position: static;
+}
+
+
+.clickable {
+  cursor: pointer;
 }

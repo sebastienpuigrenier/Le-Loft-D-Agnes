@@ -8,7 +8,7 @@ export const SummaryProduct = ({produit}) => {
 
   return (
     <div
-      className="summary-product-container"
+      className="summary-product-container clickable"
       onClick={() => navigate(`/${produit.nom}`)}
     >
       <img src={produit.photo}/>

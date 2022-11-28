@@ -42,7 +42,6 @@ export const Header = () => {
     };
   }, []);
 
-  console.warn(isMini);
   return(
     <>
       <header
@@ -52,7 +51,7 @@ export const Header = () => {
         <div className="header-container">
           <div className="grid-h1">
             <h1
-              className={isMenuActive ? "active" : ""}
+              className={isMenuActive ? "active" : "" + " clickable "}
               onClick={() => {
                 navigate("");
                 isMenuActive ? setIsMenuActive(!isMenuActive) : null;

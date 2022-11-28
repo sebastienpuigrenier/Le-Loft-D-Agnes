@@ -6,7 +6,7 @@ export const IndexCategorieLine = ({categorie}) => {
   
   return (
     <div
-      className="index-categorie-line"
+      className="index-categorie-line clickable"
       onClick={() => navigate(categorie.nom)}
     >
       <h2>{categorie.nom}</h2>
