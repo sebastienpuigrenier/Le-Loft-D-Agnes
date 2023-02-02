@@ -10,9 +10,9 @@ export const IndexCategorieLine = ({categorie}) => {
       onClick={() => navigate(categorie.nom)}
     >
       <h2>{categorie.nom}</h2>
-      <img src={categorie.photo} className="logo-categorie" alt={categorie.nom} />
+      <img src={categorie.lien} className="logo-categorie" alt={categorie.nom} />
       <div className="index-categorie-line-text-container">
-        <p>{categorie.descriptif}</p>
+        <p>{categorie.description}</p>
       </div>
     </div>
   );

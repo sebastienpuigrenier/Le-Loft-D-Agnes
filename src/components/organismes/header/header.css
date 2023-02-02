@@ -9,7 +9,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100% var(--height);
 
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
   transition: left 0.5s, height 0s;
 
   border-bottom: 2px solid var(--color-black);
@@ -27,7 +27,7 @@ header.active {
 
 header::before {
   content: '';
-  
+
   height: var(--height);
   width: 100vw;
 
@@ -57,13 +57,10 @@ header h1 {
 
 header h1.active {
   transform: translateX(-50%) translateY(80%);
-  left: 50%; 
+  left: 50%;
   font-size: var(--title-height);
 }
 
-header .clickable {
-  cursor: pointer;
-}
 
 .header-container {
   height: 100%;

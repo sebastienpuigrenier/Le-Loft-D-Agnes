@@ -4,18 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Poiret+One&display=swap');
 
 :root {
-  --color-black: rgba(34, 30, 34, 1);
-  --color-black-transparent: rgba(34, 30, 34, 0.8);
-  --color-gold: #c59849;
-  --color-white: #fcfaf9;
-  --color-green: #60787d;
+	--color-black: rgba(34, 30, 34, 1);
+	--color-black-transparent: rgba(34, 30, 34, 0.8);
+	--color-gold: #c59849;
+	--color-white: #fcfaf9;
+	--color-green: #60787d;
 	--font-title: 'Poiret One', cursive;
 	--font-second: 'Poiret One', cursive;
 	--font-texte: 'Abel', sans-serif;
 }
 
 body {
-	line-height: 1; /* adapt to your design */
+	line-height: 1;
+	/* adapt to your design */
 }
 
 /* font-sizing for content */
@@ -27,54 +28,67 @@ th,
 label,
 textarea,
 caption,
-details, 
-figure, 
+details,
+figure,
 hgroup {
 	font-size: 1rem;
 	line-height: 1.5;
 	margin: 1.5rem 0 0;
 }
-h1, .h1-like {
+
+h1,
+.h1-like {
 	font-size: 1.8571rem;
 	font-weight: bold;
 	line-height: 1.6154rem;
 	margin: .8077rem 0 0 0;
 	font-family: var(--font-second);
 }
-h2, .h2-like {
+
+h2,
+.h2-like {
 	font-size: 1.7143rem;
 	font-weight: bold;
 	line-height: 1.75rem;
 	margin: .875rem 0 0 0;
 	font-family: var(--font-second);
 }
-h3, .h3-like {
+
+h3,
+.h3-like {
 	font-size: 1.5714rem;
 	font-weight: normal;
 	line-height: 1.909rem;
 	margin: .9545rem 0 0 0;
 }
-h4, .h4-like {
+
+h4,
+.h4-like {
 	font-size: 1.4286rem;
 	font-weight: normal;
 	line-height: 1.05rem;
-	margin:  1.05rem 0 0 0;
+	margin: 1.05rem 0 0 0;
 	font-family: var(--font-texte);
 }
-h5, .h5-like {
+
+h5,
+.h5-like {
 	font-size: 1.2857rem;
 	font-weight: normal;
 	line-height: 1.1667rem;
-	margin:  1.1667rem 0 0 0;
+	margin: 1.1667rem 0 0 0;
 	font-family: var(--font-texte);
 }
-h6, .h6-like {
+
+h6,
+.h6-like {
 	font-size: 1.1429rem;
 	font-weight: normal;
 	line-height: 1.3125rem;
-	margin:  1.3125rem 0 0 0;
+	margin: 1.3125rem 0 0 0;
 	font-family: var(--font-texte);
 }
+
 p {
 	font-size: 1rem;
 	line-height: 1.5;
@@ -87,18 +101,22 @@ p {
 	font-size: .7143rem;
 	line-height: 2.1rem;
 }
+
 .small {
 	font-size: .8571rem;
 	line-height: 1.75rem;
 }
+
 .big {
 	font-size: 1.1429rem;
 	line-height: 1.3125rem;
 }
+
 .bigger {
 	font-size: 1.2857rem;
 	line-height: 1.1667rem;
 }
+
 .biggest {
 	font-size: 1.4286rem;
 	line-height: 1.05rem;
@@ -114,18 +132,25 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-code, 
+
+code,
 pre,
 samp {
 	white-space: pre-wrap;
 	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
 }
-code { line-height: 1rem; }
-table { margin-bottom: 1.5rem; }
+
+code {
+	line-height: 1rem;
+}
+
+table {
+	margin-bottom: 1.5rem;
+}
 
 /* link balise a */
 a {
-  outline: none;
+	outline: none;
 }
 
 
@@ -137,17 +162,11 @@ a:visited {
 	color: inherit;
 }
 
-a:focus {
+a:focus {}
 
-}
+a:hover {}
 
-a:hover {
-
-}
-
-a:active {
-
-}
+a:active {}
 
 /* avoid top margins on first content elrement */
 p:first-child,
@@ -171,17 +190,40 @@ li ol {
 }
 
 /* HTML5 tags */
-article, aside, details, figcaption, figure, header, hgroup, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+header,
+hgroup,
+nav,
+section {
 	display: block;
 }
 
 /* max values */
-img, table, td, blockquote, code, pre, textarea, input, video {
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
 	max-width: 100%;
 }
 
 /* you shall not pass */
-div, textarea, table, td, th, code, pre, samp {
+div,
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp {
 	word-wrap: break-word;
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -196,26 +238,33 @@ img {
 	height: auto;
 	vertical-align: middle;
 }
-a img { border: 0; }
+
+a img {
+	border: 0;
+}
 
 /* scripts */
-body > script {display: none !important;}
+body>script {
+	display: none !important;
+}
 
 /* skip-links */
 .skip-links {
 	position: absolute;
 }
+
 .skip-links a {
 	position: absolute;
 	left: -9999px;
 	padding: 0.5em;
 	text-decoration: none;
 }
+
 .skip-links a:focus {
 	position: static;
 }
 
 
 .clickable {
-  cursor: pointer;
+	cursor: pointer;
 }

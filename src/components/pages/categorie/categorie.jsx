@@ -2,9 +2,39 @@ import { mobileFooterHeight, mobileHeaderHeight } from "../../../utils/divDimens
 import { SummaryProduct } from "../../molecules/summary-product/summary-product";
 import "./categorie.css";
 
-import Produits from "../../../fakeData/ListeProduit.json";
+import { useEffect, useState } from "react";
+import { api } from "../../../utils/api";
 
-export const Categorie = ({titre}) => {
+
+export const Categorie = ({titre, id}) => {
+  const [produits, setProduits] = useState([]);
+
+  useEffect(() => {
+    const ENDPOINT = "/browse_produits";
+    api
+      .get(ENDPOINT)
+      .then((res) => {
+        const produitsTemp = res.data;
+        /*
+        ** localhost cannot be load due to security issues.
+        ** load fake data when use with localhost
+        */
+        if (process.env.REACT_APP_BACKEND_URL === "http://localhost:5000") {
+          produitsTemp.map((produit) => {
+            produit.lien = produit.localhostlien;
+          });
+        } else {
+          produitsTemp.map((produit) => {
+            produit.lien = `${process.env.REACT_APP_BACKEND_URL}/uploads/${produit.lien}`;
+          });          
+        }
+        setProduits(produitsTemp);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   const minHeight = 100 - mobileFooterHeight - mobileHeaderHeight;
   return (
     <div
@@ -12,14 +42,13 @@ export const Categorie = ({titre}) => {
     >
       <h2 className="categorie-title">{titre}</h2>
       <div className="categorie-container">
-        {Produits
+        {produits
           .filter((produit) => {
-            return produit.categorie === titre;
+            return produit.num_categories === id;
           })
           .map((produit) => {
-            console.warn('produit', produit);
             return <SummaryProduct
-              key={produit.id}
+              key={produit.num_produit}
               produit={produit}
             />;
           

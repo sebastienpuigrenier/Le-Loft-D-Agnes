@@ -1,17 +1,32 @@
+
+import { api } from "../../../utils/api";
 import { Hamburger } from "../../atomes/hamburger/hamburger";
 import { MobileNavbar } from "../mobile-navbar/mobile-navbar";
 import { mobileHeaderHeight } from "../../../utils/divDimensions";
 import "./header.css";
 import { useNavigate } from "react-router-dom";
 import { mobileNavBarLineHeight } from "../../../utils/divDimensions";
-import Categories from "../../../fakeData/Categorie.json";
 import { useContext } from "react";
 import ExportContext from "../../../contexts/context";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const ENDPOINT_CATEGORIES = "/browse_categories";
+    
+    api
+      .get(ENDPOINT_CATEGORIES)
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   let navigate = useNavigate();
-  const lineHeight = mobileNavBarLineHeight(Categories.length);
+  const lineHeight = mobileNavBarLineHeight(categories.length);
   const headerHeight = {
     "--height" : `${mobileHeaderHeight}vh`,
     "--title-height" : `calc(2 * ${lineHeight}px)`
@@ -25,7 +40,6 @@ export const Header = () => {
   };
 
   const handleScroll = () => {
-    console.warn(window.pageYOffset);
     if(window.pageYOffset > 80) {
       setIsMini(true);
     } else {

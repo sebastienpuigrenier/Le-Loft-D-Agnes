@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import ExportContext from "./contexts/context";
+import { api } from "./utils/api";
 
 import { Index } from "./components/pages/Index";
 import { Header } from "./components/organismes/header/header";
@@ -13,14 +14,38 @@ import { Produit } from "./components/pages/produit/produit";
 import './App.css';
 import './base.css';
 
-import Categories from "./fakeData/Categorie.json";
-import ListeProduit from "./fakeData/ListeProduit.json";
 
 
 function App() {
   const {isMenuActive} = useContext(ExportContext.Context);
   const [showContent, setShowContent] = useState(false);
   const [realvh, setRealVh] = useState(window.innerHeight * 0.01);
+
+  const [categories, setCategories] = useState([]);
+  const [produits, setProduits] = useState([]);
+
+  useEffect(() => {
+    const ENDPOINT_CATEGORIES = "/browse_categories";
+    const ENDPOINT_PRODUITS = "/browse_produits";
+    
+    api
+      .get(ENDPOINT_CATEGORIES)
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    api
+      .get(ENDPOINT_PRODUITS)
+      .then((res) => {
+        setProduits(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   useEffect(() => {
     if(!isMenuActive){
@@ -53,14 +78,14 @@ function App() {
       <Header />
       <div style={showContent ? {display: 'block'} : {display: 'none'}}>
         <Routes>
-          {Categories.map((categorie, index) => 
+          {categories.map((categorie, index) => 
             <Route
               key={index}
               path={`/${categorie.nom}`}
-              element={<Categorie titre={categorie.nom} />}
+              element={<Categorie titre={categorie.nom} id={categorie.num_categories}/>}
             />
           )}
-          {ListeProduit.map((produit, index) => 
+          {produits.map((produit, index) => 
             <Route
               key={index}
               path={`/${produit.nom}`}

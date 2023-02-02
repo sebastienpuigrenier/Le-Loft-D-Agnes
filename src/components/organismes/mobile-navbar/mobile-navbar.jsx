@@ -1,16 +1,31 @@
-import Categories from "../../../fakeData/Categorie.json";
+import { useEffect, useState } from "react";
+import { api } from "../../../utils/api";
 import { mobileNavBarLineHeight } from "../../../utils/divDimensions";
 import { MobileNavbarLine } from "../../molecules/mobile-navbar-line/mobile-navbar-line";
 
 import "./mobile-navbar.css";
 
 export const MobileNavbar = ({headerHeight, handleClick}) => {
+  const [categories, setCategories] = useState([]);
 
-  const lineHeight = mobileNavBarLineHeight(Categories.length);
+  useEffect(() => {
+    const ENDPOINT_CATEGORIES = "/browse_categories";
+    
+    api
+      .get(ENDPOINT_CATEGORIES)
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  const lineHeight = mobileNavBarLineHeight(categories.length);
 
   return (
     <div className="mobilenavbar-container">
-      {Categories.map((categorie, index) => {
+      {categories.map((categorie, index) => {
         const top = headerHeight + (index * lineHeight);
         return(
           <MobileNavbarLine
@@ -28,7 +43,7 @@ export const MobileNavbar = ({headerHeight, handleClick}) => {
         key="contact"
         titre = "Contact"
         height={lineHeight}
-        top = {headerHeight + (Categories.length * lineHeight)}
+        top = {headerHeight + (categories.length * lineHeight)}
         handleClick={handleClick}
       />
 

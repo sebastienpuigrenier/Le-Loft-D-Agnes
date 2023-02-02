@@ -40,7 +40,8 @@ module.exports = {
           "@assets": "./src/assets",
           "@components": "./src/components",
           "@pages": "./src/pages",
-          "@services": "./src/services"
+          "@services": "./src/services",
+          "@utils": "./src/utils"
         },
         "extensions": [".js", ".jsx"]
       }
