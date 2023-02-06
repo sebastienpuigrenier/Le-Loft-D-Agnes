@@ -6,13 +6,21 @@ import "./produit.css";
 
 export const Produit = ({titre}) => {
   const [produitAAfficher, setProduitAAfficher] = useState([]);
+  const [polices, setPolices] = useState([]);
+  const [cuirs, setCuirs] = useState([]);
 
   useEffect(() => {
-    const ENDPOINT = "/browse_produits";
-    api
-      .get(ENDPOINT)
-      .then((res) => {
-        const produitsTemp = res.data;
+    const ENDPOINT_PRODUITS = "/browse_produits";
+    const ENDPOINT_POLICES = "/browse_polices";
+    const ENDPOINT_CUIRS = "/browse_cuirs";
+
+    const promiseProduits = api.get(ENDPOINT_PRODUITS);
+    const promisePolices = api.get(ENDPOINT_POLICES);
+    const promiseCuirs = api.get(ENDPOINT_CUIRS);
+
+    Promise.all([promiseProduits, promisePolices, promiseCuirs])
+      .then((data) => {
+        const produitsTemp = data[0].data;
         /*
         ** localhost cannot be load due to security issues.
         ** load fake data when use with localhost
@@ -26,28 +34,19 @@ export const Produit = ({titre}) => {
             produit.lien = `${process.env.REACT_APP_BACKEND_URL}/uploads/${produit.lien}`;
           });          
         }
-        const produits = produitsTemp;
-        const produit = produits.filter((produit) => {
+        const produit = produitsTemp.filter((produit) => {
           return produit.nom === titre;
         });
         setProduitAAfficher(produit[0]);
+
+        setPolices(data[1].data);
+        setCuirs(data[2].data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
   
-  /*
-  let listeAnses = [];
-  for (let i = 0; i < produitAAfficher.anse.length; i++) {
-    listeAnses.push(Anses[produitAAfficher.anse[i]]);
-  }
-  
-  let listePolices = [];
-  for (let i = 0; i < produitAAfficher.police.length; i++) {
-    listePolices.push(Fonts[produitAAfficher.police[i]]);
-  }
-*/
   return (
     <div className="produit-container">
       <h1>{produitAAfficher.nom}</h1>
@@ -69,20 +68,26 @@ export const Produit = ({titre}) => {
         <div className="produit-information-detail-01">
           <p>{produitAAfficher.longueur} x {produitAAfficher.largeur} x {produitAAfficher.hauteur}</p>
         </div>
-        <div className="produit-information-detail-02">
-          {/*
-          listeAnses.map((anse, id) => {
-            return <p key={id}>{anse.nom}</p>;
-          })
-        */}
-        </div>
-        <div className="produit-information-detail-03">
-          {/*
-          listePolices.map((police, id) => {
-            return <p key={id}>{police.nom}</p>;
-          })
-        */}
-        </div>
+        {cuirs.length>0
+          ? <div className="produit-information-detail-02">
+            {
+              cuirs.map((cuirs, id) => {
+                return <p key={id}>{cuirs.couleur}</p>;
+              })
+            }
+          </div>
+          :<p>Non disponible</p>
+        }
+        {cuirs.length>0
+          ? <div className="produit-information-detail-03">
+            {
+              polices.map((police, id) => {
+                return <p key={id}>{police.nom}</p>;
+              })
+            }
+          </div>
+          :<p>Non disponible</p>
+        }
         <div className="produit-information-detail-04">
           <p>{produitAAfficher.prix}€</p>
         </div>

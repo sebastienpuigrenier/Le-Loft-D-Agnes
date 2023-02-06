@@ -46,6 +46,16 @@ export const MobileNavbar = ({headerHeight, handleClick}) => {
         top = {headerHeight + (categories.length * lineHeight)}
         handleClick={handleClick}
       />
+      {
+        // TODO remove on production
+      }
+      <MobileNavbarLine
+        key="adminlogin"
+        titre = "Administration"
+        height={lineHeight}
+        top = {headerHeight + (categories.length * lineHeight) + lineHeight}
+        handleClick={handleClick}
+      />
 
     </div>
 

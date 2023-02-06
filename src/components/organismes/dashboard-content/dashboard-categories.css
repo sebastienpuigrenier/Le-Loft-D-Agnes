@@ -1,0 +1,147 @@
+.global_form_container {
+  margin: 1rem 0;
+}
+
+.nouvelle_collection_form_container {
+  display: flex;
+  gap: 1rem;
+
+}
+
+.nouvelle_collection_inputs_container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
+.nouvelle_collection_label {
+  margin: 0.5rem 0;
+}
+
+#categorie_description {
+  font-family: var(--font-texte);
+}
+
+.nouvelle_collection {
+  width: 10rem;
+}
+
+.nouvelle_collection .dropzone-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10rem;
+  cursor: pointer;
+}
+
+.nouvelle_collection .dropzone-content img {
+  max-width: 100%;
+  height: auto;
+  max-height: 95%;
+}
+
+.nouvelle_collection .dropzone-icon {
+  font-size: 3rem;
+}
+
+.nouvelle_collection .dropzone-reset_button {
+  height: 1rem;
+  font-size: 0.8rem;
+  position: relative;
+  top: -1rem;
+}
+
+
+#existant {
+  margin: 1rem auto;
+  font-family: var(--font-texte);
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#existant td,
+#existant th {
+  border: 1px solid var(--color-white);
+  padding: 0.5rem;
+}
+
+#existant tr:nth-child(even) {
+  background-color: var(--color-white);
+}
+
+#existant tr:hover {
+  background-color: var(--color-white);
+}
+
+#existant th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.modif_collection_textarea {
+  width: 100%;
+}
+
+.modif_collection_text {
+  width: 20ch;
+}
+
+.modif_collection_number {
+  width: 5ch;
+}
+
+
+.nouvelle-collection-button {
+  align-items: center;
+  border: 2px solid var(--color-black);
+  border-radius: 0.5rem;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-second);
+  font-size: 1rem;
+  font-weight: 800;
+  height: 3rem;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20rem;
+  margin: 0.5rem 5rem 0.5rem auto;
+}
+
+.nouvelle-collection-button:after {
+  background-color: var(--color-black);
+  border-radius: 0.5rem;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.nouvelle-collection-button:hover:after {
+  transform: translate(0, 0);
+}
+
+.nouvelle-collection-button:active {
+  outline: 0;
+}
+
+.nouvelle-collection-button:hover {
+  outline: 0;
+}

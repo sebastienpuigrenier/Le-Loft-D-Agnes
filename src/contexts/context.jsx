@@ -4,6 +4,9 @@ const Context = createContext();
 
 function Provider({ children }) {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const [infoUser, setInfoUser] = useState({
+    email: sessionStorage.getItem(`email`),
+  });
 
   useEffect(() => {
     setIsMenuActive(false);
@@ -14,6 +17,8 @@ function Provider({ children }) {
       value={{
         isMenuActive,
         setIsMenuActive,
+        infoUser,
+        setInfoUser,
       }}
     >
       {children}

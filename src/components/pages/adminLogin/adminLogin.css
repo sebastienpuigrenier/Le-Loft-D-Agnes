@@ -1,0 +1,57 @@
+.adminlogin-container {
+  width: 50%;
+  margin: 20rem auto 0 auto;
+  padding: 2rem;
+  border: 2px solid var(--color-gold);
+  border-radius: 1rem;
+}
+
+.adminlogin-login-button {
+  align-items: center;
+  border: 2px solid var(--color-black);
+  border-radius: 0.5rem;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-second);
+  font-size: 1rem;
+  font-weight: 800;
+  height: 3rem;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0.5rem auto;
+}
+
+.adminlogin-login-button:after {
+  background-color: var(--color-black);
+  border-radius: 0.5rem;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.adminlogin-login-button:hover:after {
+  transform: translate(0, 0);
+}
+
+.adminlogin-login-button:active {
+  outline: 0;
+}
+
+.adminlogin-login-button:hover {
+  outline: 0;
+}

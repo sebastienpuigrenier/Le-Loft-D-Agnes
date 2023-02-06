@@ -1,5 +1,6 @@
 header {
   height: var(--height);
+  max-height: 14vh;
   position: fixed;
   width: 100%;
   top: 0;
