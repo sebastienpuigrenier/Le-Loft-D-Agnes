@@ -145,3 +145,7 @@
 .nouvelle-collection-button:hover {
   outline: 0;
 }
+
+.reset-css-button {
+  all: unset
+}

@@ -56,17 +56,18 @@ h2,
 
 h3,
 .h3-like {
-	font-size: 1.5714rem;
-	font-weight: normal;
+	font-size: 1.5rem;
+	font-weight: bold;
 	line-height: 1.909rem;
 	margin: .9545rem 0 0 0;
+	font-family: var(--font-texte);
 }
 
 h4,
 .h4-like {
-	font-size: 1.4286rem;
+	font-size: 1.4rem;
 	font-weight: normal;
-	line-height: 1.05rem;
+	line-height: 1.5rem;
 	margin: 1.05rem 0 0 0;
 	font-family: var(--font-texte);
 }

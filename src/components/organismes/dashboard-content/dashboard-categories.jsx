@@ -1,17 +1,13 @@
 import {useEffect, useState} from "react";
 import { notifySuccess, notifyError, api } from "../../../utils/utils";
-import { MdDeleteForever, MdModeEditOutline, MdSave, MdClose } from "react-icons/md";
 import {UploadImageForm} from "../../molecules/upload-image-form/upload-imade-form";
-
+import { DashboardTableExistant } from "../../molecules/dashboard-table-existant/dashboard-table-existant";
 import "./dashboard-categories.css";
 
 export const DashboardCategories = () => {
   const [categories, setCategories] = useState([]);
   const [infoCreate, setInfoCreate] = useState({});
-  const [infoModif, setInfoModif] = useState({});
   const [imageFile, setImageFile] = useState([]);
-  const [imageModifFile, setImageModifFile] = useState([]);
-  const [modif, setModif] = useState("");
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
@@ -43,9 +39,6 @@ export const DashboardCategories = () => {
     setUpdate(false);
 
   }, [update]);
-
-  
-
   
   const handleChange = (e) => {
     setInfoCreate({
@@ -56,6 +49,7 @@ export const DashboardCategories = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const formData = new FormData();
     formData.append("imageFile", imageFile[0]);
     for (const clef in infoCreate) {
@@ -63,66 +57,23 @@ export const DashboardCategories = () => {
         formData.append(clef, infoCreate[clef]);
       }
     }
+    
     const ENDPOINT = "/create_categorie";
     api
       .post(ENDPOINT, formData)
       .then((res) => {
         notifySuccess(`Nouvelle catégorie créée : ${res.data.nom}`);
       })
+      .then(() => {
+        e.target.reset();
+        setImageFile([]);
+        setUpdate(true);
+      })
       .catch((err) => {
         notifyError("Une erreur s'est produite lors de la création.");
         console.error(err.response.data);
       });
-    e.target.reset();
-    setImageFile([]);
-    setUpdate(true);
   };
- 
-  const handleModifChange = (e) => {
-    setInfoModif({
-      ...infoModif,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleModifSubmit = (e, uuid) => {
-    e.preventDefault();
-    const formDataModif = new FormData();
-    formDataModif.append("imageFile", imageFile[0]);
-    for (const clef in infoCreate) {
-      if ({}.hasOwnProperty.call(infoCreate, clef)) {
-        formDataModif.append(clef, infoCreate[clef]);
-      }
-    }
-    const ENDPOINT = `/modif_categorie/${uuid}`;
-    api
-      .post(ENDPOINT, formDataModif)
-      .then((res) => {
-        notifySuccess(`Catégorie Modifiée : ${res.data.nom}`);
-      })
-      .catch((err) => {
-        notifyError("Une erreur s'est produite lors de la modification.");
-        console.error(err.response.data);
-      });
-    setImageFile([]);
-    setModif("");
-    setUpdate(true);
-  };
-
-  const deleteItem = (categorieUuid, photoUuid) => {
-    const ENDPOINT = `/delete_categorie/${categorieUuid}/photo/${photoUuid}`;
-    api
-      .delete(ENDPOINT)
-      .then((res) => {
-        notifySuccess(`Catégorie Supprimée : ${res.data.nom}`);
-      })
-      .catch((err) => {
-        notifyError("Une erreur s'est produite lors de la suppression.");
-        console.error(err.response.data);
-      });
-    setUpdate(true);
-  };
-
 
   return (
     <div>
@@ -181,7 +132,7 @@ export const DashboardCategories = () => {
             </div>
           </div>
           <button
-            id="sign-in"
+            id="add-new"
             className="nouvelle-collection-button"
             type="submit"
             required
@@ -191,130 +142,9 @@ export const DashboardCategories = () => {
         </form>
       </div>
       <hr/>
-      <div>
-        <h2>Categories existantes</h2>
-        {categories.map((categorie, index) => 
-          <form
-            key={index}
-            method="put"
-            onSubmit={(e) => handleModifSubmit(e, categorie.num_categories)}
-            id={`modif-form-${categorie.num_categories}`}
-          />
-        ) }
-        <table id="existant">
-          <tr>
-            <th>id</th>
-            <th>Priorité d'affichage</th>
-            <th>Image</th>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-          {categories.map((categorie, index) => 
-            <tr key={index}>
-              <td>
-                <p>{categorie.num_categories}</p>
-              </td>
-              <td>
-                { modif === categorie.num_categories
-                  ?<label
-                    className="nouvelle_collection_label"
-                    htmlFor="categorie_priorité"
-                  >
-                    <input
-                      className="modif_collection_number"
-                      form={`modif-form-${categorie.num_categories}`}
-                      type="number"
-                      name="priorité"
-                      id="categorie_priorité"
-                      defaultValue={categorie.priorité}
-                      onChange={(e) => handleModifChange(e)}
-                    />
-                  </label>
-                  :<p>{categorie.priorité}</p>
-                }
-              </td>
-              <td>
-                { modif === categorie.num_categories
-                  ? <div className="nouvelle_collection">
-                    <UploadImageForm
-                      imageFile={imageModifFile}
-                      setImageFile={setImageModifFile}
-                      defaultPhoto={categorie.lien}
-                    />
-                  </div>
-                  :<img src={categorie.lien} className="logo-categorie" alt={categorie.nom} />
-                }
-                
-              </td>
-              <td>
-                { modif === categorie.num_categories
-                  ?<label
-                    className="nouvelle_collection_label"
-                    htmlFor="categorie_nom"
-                  >
-                    <input
-                      className="modif_collection_text"
-                      form={`modif-form-${categorie.num_categories}`}
-                      type="text"
-                      name="nom"
-                      id="categorie_nom"
-                      defaultValue={categorie.nom}
-                      onChange={(e) => handleModifChange(e)}
-                    />
-                  </label>
-                  :<p>{categorie.nom}</p>
-                }
-                
-              </td>
-              <td>
-                { modif === categorie.num_categories
-                  ?<label
-                    className="modif_collection_label"
-                    htmlFor="categorie_description"
-                  >
-                    <textarea
-                      className="modif_collection_textarea"
-                      form={`modif-form-${categorie.num_categories}`}
-                      rows={5}
-                      name="description"
-                      id="categorie_description"
-                      defaultValue={categorie.description}
-                      onChange={(e) => handleModifChange(e)}
-                    />
-                  </label>
-                  : <p>{categorie.description}</p>
-                }
-              
-              </td>
-              <td>
-                { modif === categorie.num_categories
-                  ?<>
-                    <button
-                      type="submit"
-                      form={`modif-form-${categorie.num_categories}`}
-                    >
-                      <MdSave />
-                    </button>
-                    <MdClose 
-                      onClick={() => setModif("")}
-                    />
-                  </>
-                  : <> 
-                    <MdModeEditOutline
-                      onClick={() => setModif(categorie.num_categories)}
-                    />
-                    <MdDeleteForever
-                      onClick={() => deleteItem(categorie.num_categories, categorie.num_photos)}
-                    />
-                  </>
-                }
-
-              </td>
-            </tr>
-          )}
-        </table>
-      </div>
-    </div>
-  );
+      <DashboardTableExistant
+        collection = {categories}
+        setUpdate = {setUpdate}
+      />
+    </div>);
 };
