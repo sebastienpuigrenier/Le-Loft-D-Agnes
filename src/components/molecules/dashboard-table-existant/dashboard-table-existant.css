@@ -1,0 +1,49 @@
+.table-container {
+  margin: 1rem;
+}
+
+.table-existant__row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+}
+
+.table-existant__header {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.table-existant__row-item {
+  text-align: center;
+}
+
+#table-existant__row-id {
+  width: 10%;
+}
+
+#table-existant__id {
+  font-size: 0.7rem;
+}
+
+#table-existant__row-priorité {
+  width: 12%;
+}
+
+#table-existant__row-image {
+  width: 20%;
+}
+
+#table-existant__row-nom {
+  width: 15%;
+}
+
+#table-existant__row-description {
+  width: 33%;
+}
+
+#table-existant__row-action {
+  width: 10%;
+}
