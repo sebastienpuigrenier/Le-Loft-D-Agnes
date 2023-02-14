@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import { notifySuccess, notifyError, api } from "../../../utils/utils";
 import {UploadImageForm} from "../../molecules/upload-image-form/upload-imade-form";
-import { DashboardTableExistant } from "../dashboard-table-existant/dashboard-table-existant";
+import { DashboardTableExistant } from "../../organismes/dashboard-table-existant/dashboard-table-existant";
 import "./dashboard-categories.css";
 
 export const DashboardCategories = () => {
@@ -57,7 +57,7 @@ export const DashboardCategories = () => {
         formData.append(clef, infoCreate[clef]);
       }
     }
-
+    
     const ENDPOINT = "/create_categorie";
     api
       .post(ENDPOINT, formData)

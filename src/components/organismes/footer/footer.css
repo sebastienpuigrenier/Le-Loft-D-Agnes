@@ -2,7 +2,7 @@ footer {
   height: var(--height);
   min-height: 30vh;
   padding: 0 1.25rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,4 +25,12 @@ footer p {
 #svglogo {
   max-width: 105px;
   width: 105px;
+}
+
+@media screen and (min-width: 600px) {
+  footer {
+    height: 150px;
+    min-height: 150px;
+  }
+
 }

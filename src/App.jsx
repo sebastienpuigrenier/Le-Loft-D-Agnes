@@ -10,14 +10,14 @@ import { Footer } from "./components/organismes/footer/footer";
 import { Categorie } from "./components/pages/categorie/categorie";
 import { Produit } from "./components/pages/produit/produit";
 import { AdminLogin } from "./components/pages/adminLogin/adminLogin";
-import { Dashboard } from "./components/pages/dashboard/dashboard";
-import { DashboardIndex } from "./components/organismes/dashboard-content/dashboard-index";
+import { Dashboard } from "./components/templates/dashboard/dashboard";
 import {
   DashboardCategories,
   DashboardProduits,
   DashboardPolices,
-  DashboardCuirs
-} from "./components/organismes/dashboard-content/dashboard-content-index";
+  DashboardCuirs,
+  DashboardIndex
+} from "./components/pages/dashboard-content/dashboard-content-index";
 
 
 import './App.css';

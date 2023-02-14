@@ -41,3 +41,12 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (min-width: 600px) {
+
+  .index-main-container {
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

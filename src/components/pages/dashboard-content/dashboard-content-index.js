@@ -1,3 +1,4 @@
+export * from './dashboard-index';
 export * from "./dashboard-categories";
 export * from "./dashboard-produits";
 export * from "./dashboard-polices";
